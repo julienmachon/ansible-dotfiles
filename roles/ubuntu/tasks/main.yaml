@@ -31,6 +31,7 @@
     name: "{{ item }}"
     state: present
     channel: edge
+    classic: true
   loop: "{{ snap_packages_edge }}"
   become: true
 
