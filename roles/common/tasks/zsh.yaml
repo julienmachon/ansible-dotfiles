@@ -1,0 +1,19 @@
+- name: oh-my-zsh install directory
+  stat:
+    path: ~/.oh-my-zsh
+  register: zsh_dir
+
+- name: Install oh-my-zsh
+  shell: curl -sL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash -
+  when: not zsh_dir.stat.exists
+
+- name: Clone base16-shell
+  git:
+    repo: "https://github.com/chriskempson/base16-shell.git"
+    dest: ~/.config/base16-shell
+
+- name: Symlink zsh config
+  file:
+    src: "{{ ansible_env.PWD }}/roles/common/files/.zshrc"
+    dest: ~/.zshrc
+    state: link

@@ -1,0 +1,23 @@
+- name: Add homebrew taps
+  command: brew tap {{ item }}
+  loop: "{{ homebrew_taps }}"
+
+- name: Update homebrew
+  homebrew:
+    update_homebrew: true
+
+- name: Install homebrew packages
+  homebrew:
+    name: "{{ item }}"
+    state: latest
+  loop: "{{ homebrew_packages }}"
+
+- name: Install homebrew cask packages
+  homebrew_cask:
+    name: "{{ item }}"
+    state: latest
+  loop: "{{ homebrew_cask_packages }}"
+  ignore_errors: true
+
+- name: homebrew cleanup
+  command: brew cleanup

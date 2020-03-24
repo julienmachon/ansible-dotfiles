@@ -1,0 +1,10 @@
+- name: Install tpm - tmux package manager
+  git:
+    repo: https://github.com/tmux-plugins/tpm
+    dest: ~/.tmux/plugins/tpm
+
+- name: Symlink tmux config
+  file:
+    src: "{{ ansible_env.PWD }}/roles/common/files/.tmux.conf"
+    dest: ~/.tmux.conf
+    state: link

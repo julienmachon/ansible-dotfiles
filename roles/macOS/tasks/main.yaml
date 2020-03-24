@@ -1,0 +1,5 @@
+- name: Install apps
+  import_tasks: installs.yaml
+
+- name: Configure apps
+  import_tasks: settings.yaml

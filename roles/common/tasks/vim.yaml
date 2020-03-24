@@ -1,0 +1,30 @@
+- name: dein install directory
+  stat:
+    path: ~/.dein
+  register: dein_dir
+
+- name: Install Dein - Neovim plugin manager
+  shell: curl -sL https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh | bash -s ~/.dein
+  when: not dein_dir.stat.exists
+
+- name: Create vim config directory
+  file:
+    path: ~/.config/nvim
+    state: directory
+
+- name: Symlink vim config
+  file:
+    src: "{{ ansible_env.PWD }}/roles/common/files/init.vim"
+    dest: ~/.config/nvim/init.vim
+    state: link
+    force: true
+
+- name: Install python providers
+  pip:
+    name: neovim
+    extra_args: --upgrade
+
+- name: Install node providers
+  npm:
+    name: neovim
+    global: yes

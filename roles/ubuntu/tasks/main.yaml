@@ -1,0 +1,23 @@
+- name: Add apt repositories
+  command: add-apt-repository {{ item }}
+  loop: "{{ apt_repositories }}"
+
+- name: Update apt
+  apt:
+    update_cache: yes
+
+- name: Install apt packages
+  homebrew:
+    name: "{{ item }}"
+    state: latest
+  loop: "{{ apt_packages }}"
+
+- name: apt cleanup
+  apt:
+    autoremove: true
+
+- name: Install Snap packages
+  snap:
+    name: "{{ item }}"
+    state: latest
+  loop: "{{ snap_packages }}"

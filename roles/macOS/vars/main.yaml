@@ -1,0 +1,22 @@
+homebrew_taps: []
+
+homebrew_packages:
+  - git
+  - curl
+  - wget
+  - htop
+  - node
+  - python
+  - neovim
+  - tmux
+  - fzf
+
+homebrew_cask_packages:
+  - iterm2
+  - visual-studio-code
+  - docker
+  - slack
+  - zoom
+  - google-chrome
+  - spotify
+  - whatsapp

@@ -1,0 +1,8 @@
+- name: zsh
+  import_tasks: zsh.yaml
+
+- name: tmux
+  import_tasks: tmux.yaml
+
+- name: vim
+  import_tasks: vim.yaml

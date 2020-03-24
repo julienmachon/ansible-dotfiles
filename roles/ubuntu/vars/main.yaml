@@ -1,0 +1,20 @@
+apt_repositories: []
+
+apt_packages:
+  - snap
+  - git
+  - curl
+  - wget
+  - htop
+  - neovim
+  - python-neovim
+  - python3-neovim
+  - tmux
+  - fzf
+
+snap_packages:
+  - node
+  - docker
+  - code
+  - slack
+  - spotify
