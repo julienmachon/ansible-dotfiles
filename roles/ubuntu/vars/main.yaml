@@ -16,8 +16,12 @@ apt_packages:
   - fzf
 
 snap_packages:
-  - node
   - docker
+  - spotify
+
+snap_packages_edge:
+  - node
+
+snap_packages_classic:
   - code
   - slack
-  - spotify

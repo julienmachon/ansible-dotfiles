@@ -22,6 +22,22 @@
 - name: Install Snap packages
   snap:
     name: "{{ item }}"
-    state: latest
+    state: present
   loop: "{{ snap_packages }}"
+  become: true
+
+- name: Install Snap packages on edge channel
+  snap:
+    name: "{{ item }}"
+    state: present
+    channel: edge
+  loop: "{{ snap_packages_edge }}"
+  become: true
+
+- name: Install Snap packages with classic confinement
+  snap:
+    name: "{{ item }}"
+    state: present
+    classic: true
+  loop: "{{ snap_packages_classic }}"
   become: true
