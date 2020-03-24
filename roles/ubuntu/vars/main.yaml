@@ -9,6 +9,9 @@ apt_packages:
   - neovim
   - python-neovim
   - python3-neovim
+  - python-pip
+  - python3-pip
+  - zsh
   - tmux
   - fzf
 

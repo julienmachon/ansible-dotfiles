@@ -17,3 +17,4 @@
     src: "{{ ansible_env.PWD }}/roles/common/files/.zshrc"
     dest: ~/.zshrc
     state: link
+    force: true
