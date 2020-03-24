@@ -9,6 +9,7 @@ homebrew_packages:
   - python
   - neovim
   - tmux
+  - zsh
   - fzf
 
 homebrew_cask_packages:
