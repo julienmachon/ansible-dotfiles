@@ -1,0 +1,10 @@
+- name: Install node with snap
+  snap:
+    name: node
+    channel: 12
+    state: present
+    classic: true
+  become: true
+
+- name: Fix npm permissions
+  script: "{{ ansible_env.PWD }}/roles/ubuntu/files/fix_npm_permissions.sh"

@@ -26,15 +26,6 @@
   loop: "{{ snap_packages }}"
   become: true
 
-- name: Install Snap packages on edge channel
-  snap:
-    name: "{{ item }}"
-    state: present
-    channel: edge
-    classic: true
-  loop: "{{ snap_packages_edge }}"
-  become: true
-
 - name: Install Snap packages with classic confinement
   snap:
     name: "{{ item }}"
@@ -42,3 +33,9 @@
     classic: true
   loop: "{{ snap_packages_classic }}"
   become: true
+
+- name: Node
+  import_task: node.yaml
+
+- name: Docker
+  import_task: docker.yaml

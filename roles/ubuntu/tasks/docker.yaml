@@ -1,0 +1,9 @@
+- name: Ensure group "docker" exists
+  group:
+    name: docker
+    state: present
+
+- name: Add ourselves to the docker group
+  user:
+    name: "{{ whoami }}"
+    group: docker

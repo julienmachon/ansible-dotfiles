@@ -19,9 +19,6 @@ snap_packages:
   - docker
   - spotify
 
-snap_packages_edge:
-  - node
-
 snap_packages_classic:
   - code
   - slack
