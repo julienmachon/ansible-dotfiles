@@ -35,8 +35,8 @@ else
 		echo "We need Ansible ..."
     # install ansible
     $USE_SUDO apt-add-repository ppa:ansible/ansible
-    $USE_SUDO apt-get update
-    $USE_SUDO apt-get install ansible -y
+    $USE_SUDO apt update
+    $USE_SUDO apt install ansible -y
 	fi
 fi
 
