@@ -1,3 +1,8 @@
+- name: Create font directory
+  file:
+    path: ~/.local/share/fonts
+    state: directory
+
 - name: Install Droid Sans Mono Nerd Font Complete
   get_url:
     url: https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf
