@@ -33,8 +33,10 @@ else
 	if [ $? -ne 0 ];
 	then
 		echo "We need Ansible ..."
-    python $(curl https://bootstrap.pypa.io/get-pip.py)
-    pip install --user ansible
+    # install ansible
+    $USE_SUDO apt-add-repository ppa:ansible/ansible
+    $USE_SUDO apt-get update
+    $USE_SUDO apt-get install ansible -y
 	fi
 fi
 
