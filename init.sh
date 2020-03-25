@@ -1,6 +1,41 @@
 #!/bin/sh
+HOMEDIR=$HOME
+USERNAME=$(whoami)
 
-# install Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-# install ansible
-brew install ansible
+USE_SUDO=''
+if [ $USERNAME != "root" ];
+then
+  USE_SUDO="sudo "
+fi
+
+# Are we on OSX and do we need homebrew?
+if [[ `uname` == 'Darwin' ]];
+then
+	command -v brew > /dev/null 2>&1
+	if [ $? -ne 0 ];
+	then
+    echo "Homebrew not found. Installing ..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  fi
+
+  # Do we need to install Ansible?
+  command -v ansible > /dev/null 2>&1
+  if [ $? -ne 0 ];
+	then
+		echo "Ansible not found. Installing ..."
+    brew install ansible
+	fi
+
+# we are on Linux
+else
+	# Do we need to install Ansible?
+	command -v ansible > /dev/null 2>&1
+	if [ $? -ne 0 ];
+	then
+		echo "We need Ansible ..."
+    python $(curl https://bootstrap.pypa.io/get-pip.py)
+    pip install --user ansible
+	fi
+fi
+
+ansible-playbook -u `whoami` -k playbook.yaml
