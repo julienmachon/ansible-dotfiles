@@ -1,7 +1,7 @@
 - name: Install node with snap
   snap:
     name: node
-    channel: 12
+    channel: "10"
     state: present
     classic: true
   become: true
