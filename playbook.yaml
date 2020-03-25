@@ -1,6 +1,12 @@
 ---
 - hosts: localhost
   connection: local
-  roles:
-    - { role: macOS }
-    - { role: common }
+  tasks:
+    - include_role:
+        name: macOS
+      when: "ansible_facts['os_family'] == 'Darwin'"
+    - include_role:
+        name: ubuntu
+      when: "ansible_facts['os_family'] == 'Debian'"
+    - include_role:
+        name: common
