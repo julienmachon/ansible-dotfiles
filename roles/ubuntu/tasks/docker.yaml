@@ -2,8 +2,10 @@
   group:
     name: docker
     state: present
+  become: true
 
 - name: Add ourselves to the docker group
   user:
-    name: "{{ whoami }}"
+    name: "{{ ansible_user }}"
     group: docker
+  become: true

@@ -1,8 +1,8 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:$HOME/.npm-global/bin:/usr/local/bin:/Users/machon/Applications/flutter/bin:$PATH
+export PATH=$HOME/bin:$HOME/.npm-global/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/machon/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -60,7 +60,7 @@ source $HOME/.config/base16-shell/scripts/base16-materia.sh
 plugins=(git npm docker tmux aws ssh-agent)
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities id_rsa id_rsa_julienmachon id_rsa_gt3
+zstyle :omz:plugins:ssh-agent identities id_rsa
 zstyle :omz:plugins:ssh-agent lifetime 4h
 
 
@@ -100,7 +100,5 @@ alias dc=docker-compose
 alias dm=docker-machine
 alias dm-init='_(){ eval $(docker-machine env $1) };_'
 alias vim=nvim
-
-[ -f /Users/machon/.fzf.zsh ] && source /Users/machon/.fzf.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

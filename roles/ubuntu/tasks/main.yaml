@@ -1,41 +1,11 @@
-- name: Add apt repositories
-  command: add-apt-repository {{ item }}
-  loop: "{{ apt_repositories }}"
-
-- name: Update apt
-  apt:
-    update_cache: yes
-  become: true
-
-- name: Install apt packages
-  apt:
-    name: "{{ item }}"
-    state: latest
-  loop: "{{ apt_packages }}"
-  become: true
-
-- name: apt cleanup
-  apt:
-    autoremove: true
-  become: true
-
-- name: Install Snap packages
-  snap:
-    name: "{{ item }}"
-    state: present
-  loop: "{{ snap_packages }}"
-  become: true
-
-- name: Install Snap packages with classic confinement
-  snap:
-    name: "{{ item }}"
-    state: present
-    classic: true
-  loop: "{{ snap_packages_classic }}"
-  become: true
+- name: Install apps
+  import_tasks: installs.yaml
 
 - name: Node
-  import_task: node.yaml
+  import_tasks: node.yaml
 
 - name: Docker
-  import_task: docker.yaml
+  import_tasks: docker.yaml
+
+- name: Configure apps
+  import_tasks: settings.yaml
