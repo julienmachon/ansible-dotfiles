@@ -18,6 +18,7 @@ apt_packages:
 snap_packages:
   - docker
   - spotify
+  - insomnia
 
 snap_packages_classic:
   - code
