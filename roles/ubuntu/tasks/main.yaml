@@ -1,8 +1,8 @@
 - name: Install apps
   import_tasks: installs.yaml
 
-# - name: Node
-#   import_tasks: node.yaml
+- name: Node
+  import_tasks: node.yaml
 
 - name: Docker
   import_tasks: docker.yaml
