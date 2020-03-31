@@ -1,4 +1,5 @@
-apt_repositories: []
+apt_repositories:
+  - ppa:chris-lea/node.js
 
 apt_packages:
   - snap
@@ -14,6 +15,7 @@ apt_packages:
   - zsh
   - tmux
   - fzf
+  - nodejs
 
 snap_packages:
   - docker
