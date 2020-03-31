@@ -21,3 +21,5 @@ homebrew_cask_packages:
   - google-chrome
   - spotify
   - whatsapp
+  - insomnia
+  - kap
