@@ -1,0 +1,5 @@
+- name: Symlink git config
+  file:
+    src: "{{ ansible_env.PWD }}/roles/common/files/gitconfig"
+    dest: ~/.gitconfig
+    state: link

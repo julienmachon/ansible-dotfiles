@@ -11,6 +11,7 @@ homebrew_packages:
   - tmux
   - zsh
   - fzf
+  - gpg
 
 homebrew_cask_packages:
   - iterm2

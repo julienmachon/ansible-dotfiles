@@ -1,0 +1,5 @@
+- name: Symlink ssh config
+  file:
+    src: "{{ ansible_env.PWD }}/roles/common/files/config"
+    dest: ~/.ssh/config
+    state: link

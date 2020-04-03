@@ -1,0 +1,38 @@
+[user]
+  name = Julien Machon
+  email = julienmachon@gmail.com
+[diff]
+  tool = meld
+[difftool]
+  prompt = false
+[difftool "meld"]
+  cmd = meld "$LOCAL" "$REMOTE"
+[alias]
+  st = status
+  ci = commit -v
+  co = checkout
+  di = diff
+  amend = commit --amend
+  aa = add --all
+  fa = fetch --all
+  pom = push origin master
+  br = branch
+  ignored = !git ls-files -v | grep "^[[:lower:]]"
+  prune-local = !git branch --merged | tr -d '*' | grep -v dev | xargs -n1 git branch -d
+[push]
+  default = current
+[pull]
+  default = current
+[color]
+  ui = true
+[help]
+  autocorrect = 1
+[core]
+  pager = less -r
+  editor = nvim
+[pull]
+  rebase = true
+[merge]
+  tool = meld
+[mergetool "meld"]
+  cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"

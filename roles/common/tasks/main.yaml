@@ -6,3 +6,9 @@
 
 - name: vim
   import_tasks: vim.yaml
+
+- name: ssh
+  import_tasks: ssh.yaml
+
+- name: git
+  import_tasks: git.yaml
