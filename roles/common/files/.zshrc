@@ -60,7 +60,7 @@ source $HOME/.config/base16-shell/scripts/base16-materia.sh
 plugins=(git npm docker tmux aws ssh-agent)
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities id_rsa
+zstyle :omz:plugins:ssh-agent identities id_rsa id_rsa_julienmachon
 zstyle :omz:plugins:ssh-agent lifetime 4h
 
 
