@@ -1,6 +1,8 @@
 [user]
   name = Julien Machon
-  email = julien.machon@nexthink.com
+  email = julienmachon@gmail.com
+[includeIf "gitdir:~/code/bitbucket.intra.nexthink.com/**"]
+  path = .gitconfig_nexthink
 [diff]
   tool = meld
 [difftool]

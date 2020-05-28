@@ -3,3 +3,9 @@
     src: "{{ ansible_env.PWD }}/roles/common/files/gitconfig"
     dest: ~/.gitconfig
     state: link
+
+- name: Symlink Nexthink git config
+  file:
+    src: "{{ ansible_env.PWD }}/roles/common/files/gitconfig_nexthink"
+    dest: ~/.gitconfig_nexthink
+    state: link
