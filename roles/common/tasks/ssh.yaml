@@ -3,3 +3,4 @@
     src: "{{ ansible_env.PWD }}/roles/common/files/config"
     dest: ~/.ssh/config
     state: link
+    mode: '0600'
