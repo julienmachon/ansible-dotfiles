@@ -14,12 +14,16 @@ apt_packages:
   - zsh
   - tmux
   - fzf
+  - openjdk-11-jdk
 
 snap_packages:
   - docker
   - spotify
   - insomnia
+  - minikube
 
 snap_packages_classic:
   - code
   - slack
+  - kubectl
+

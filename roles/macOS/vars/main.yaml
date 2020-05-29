@@ -6,12 +6,15 @@ homebrew_packages:
   - wget
   - htop
   - node
+  - java11
   - python
   - neovim
   - tmux
   - zsh
   - fzf
   - gpg
+  - kubectl
+  - minikube
 
 homebrew_cask_packages:
   - iterm2
